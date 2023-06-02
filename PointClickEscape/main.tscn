@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://21fxr8uunmya"]
+
+[ext_resource type="Script" path="res://Label.gd" id="1_up5cw"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Count"
+script = ExtResource("1_up5cw")
