@@ -1,11 +1,19 @@
 [gd_scene load_steps=2 format=3 uid="uid://21fxr8uunmya"]
 
-[ext_resource type="Script" path="res://Label.gd" id="1_up5cw"]
+[ext_resource type="Texture2D" uid="uid://kj028jq76ptr" path="res://Assets/Backgrounds/pce2PanelBackground2.png" id="1_l23ry"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Count"
-script = ExtResource("1_up5cw")
+[node name="Pce2PanelBackground2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(573.5, 330.5)
+scale = Vector2(0.393887, 0.405024)
+texture = ExtResource("1_l23ry")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -17.0
+offset_top = -8.0
+offset_right = 1929.0
+offset_bottom = 1086.0
+texture = ExtResource("1_l23ry")
+expand_mode = 2

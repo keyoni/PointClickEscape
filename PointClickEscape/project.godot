@@ -18,3 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalData="*res://Singletons/GlobalData.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
