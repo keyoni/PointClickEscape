@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1bkoahgl2v6k"]
+
+[ext_resource type="Texture2D" uid="uid://suy8mkwlatnn" path="res://letter_K.png" id="1_snx14"]
+[ext_resource type="Script" path="res://scenes/playground/item_two.gd" id="2_j1yky"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6h4m"]
+size = Vector2(67, 43.5)
+
+[node name="GenericItem" type="Sprite2D"]
+texture = ExtResource("1_snx14")
+script = ExtResource("2_j1yky")
+metadata/_edit_group_ = true
+
+[node name="GenericItemArea" type="Area2D" parent="."]
+
+[node name="GenericItemShape" type="CollisionShape2D" parent="GenericItemArea"]
+shape = SubResource("RectangleShape2D_t6h4m")
+
+[connection signal="input_event" from="GenericItemArea" to="." method="_on_area_2d_input_event"]

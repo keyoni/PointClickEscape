@@ -1,8 +1,6 @@
 extends Node2D
 
-class_name Item
-@export var sprite : CompressedTexture2D
-var selected = false
+signal closeScene
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -12,10 +10,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-
-
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if Input.is_action_pressed("left_mouse_click"):
-		selected = true
-		
+func _input(event: InputEvent) -> void:
+	if Input.is_action_pressed("exit"):
+		closeScene.emit()
+		#this just deletes the node and doesn't save any data about what happened in it
+		#might just want to hide it instead
+		queue_free()

@@ -1,21 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2534ul065qs6"]
+[gd_scene load_steps=4 format=3 uid="uid://is6dfwv23tm3"]
 
-[ext_resource type="Script" path="res://Item.gd" id="1_n80so"]
 [ext_resource type="Texture2D" uid="uid://vdwlfyy23nt2" path="res://icon.svg" id="2_5723l"]
+
+[sub_resource type="GDScript" id="GDScript_jlq3u"]
+script/source = "extends Sprite2D
+
+class_name Item
+var selected = false
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if Input.is_action_pressed(\"left_mouse_click\"):
+		selected = true
+		print(\"Yay!\")
+
+func _physics_process(delta: float) -> void:
+	if selected:
+		global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
+		
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
+			selected = false
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6q8q8"]
 size = Vector2(121, 119)
 
-[node name="Item" type="Node2D"]
-script = ExtResource("1_n80so")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Item" type="Sprite2D"]
+position = Vector2(755, 486)
 texture = ExtResource("2_5723l")
+script = SubResource("GDScript_jlq3u")
+metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="Sprite2D"]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_6q8q8")
-
-[connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]
