@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6wdp3job3ju4"]
+[gd_scene load_steps=6 format=3 uid="uid://b6wdp3job3ju4"]
 
 [ext_resource type="Texture2D" uid="uid://kj028jq76ptr" path="res://assets/backgrounds/pce2PanelBackground2.png" id="1_m1qn6"]
 [ext_resource type="Script" path="res://scenes/main/Panel1.gd" id="2_rb3h8"]
+[ext_resource type="Texture2D" uid="uid://d0oa2k08x7o4i" path="res://assets/scifiStructure_14.png" id="3_gcbyh"]
+[ext_resource type="PackedScene" uid="uid://bfcmxusp8k0y" path="res://scenes/playground/invoslots_s.tscn" id="4_3gypr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kk4ss"]
 size = Vector2(97, 80)
@@ -30,5 +32,12 @@ script = ExtResource("2_rb3h8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Panel1"]
 position = Vector2(588.5, 462)
 shape = SubResource("RectangleShape2D_kk4ss")
+
+[node name="ScifiStructure14" type="Sprite2D" parent="."]
+position = Vector2(350, 939)
+scale = Vector2(3.125, 2.64062)
+texture = ExtResource("3_gcbyh")
+
+[node name="Invo" parent="." instance=ExtResource("4_3gypr")]
 
 [connection signal="input_event" from="Panel1" to="Panel1" method="_on_input_event"]

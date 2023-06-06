@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dggppgt6n73mg"]
+
+[ext_resource type="Texture2D" uid="uid://corffyp0xycb4" path="res://assets/metalPanel.png" id="1_03uej"]
+[ext_resource type="Texture2D" uid="uid://dm7jj8csbv886" path="res://assets/tankBlue_outline.png" id="2_quvl0"]
+[ext_resource type="PackedScene" uid="uid://d1bkoahgl2v6k" path="res://scenes/playground/generic_item.tscn" id="3_3p80m"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ms64j"]
+load_path = "res://.godot/imported/tankBlue_outline.png-670a4146c508585905b3dec1c8dd141a.ctex"
+
+[node name="InvoSlot" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_03uej")
+
+[node name="Item" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-1.90735e-06, -3.8147e-06)
+scale = Vector2(0.564103, 0.564103)
+texture = SubResource("CompressedTexture2D_ms64j")
+
+[node name="GenericItem" parent="Item" instance=ExtResource("3_3p80m")]
+texture = ExtResource("2_quvl0")

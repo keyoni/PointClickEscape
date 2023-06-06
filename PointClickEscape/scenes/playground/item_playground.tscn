@@ -1,13 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5jt2nwphu17b"]
+[gd_scene load_steps=9 format=3 uid="uid://c5jt2nwphu17b"]
 
 [ext_resource type="PackedScene" uid="uid://d1bkoahgl2v6k" path="res://scenes/playground/generic_item.tscn" id="1_8ngdf"]
 [ext_resource type="Script" path="res://scenes/playground/item_playground.gd" id="1_tsihx"]
 [ext_resource type="Texture2D" uid="uid://vdwlfyy23nt2" path="res://icon.svg" id="2_ildqq"]
 [ext_resource type="Texture2D" uid="uid://c3l8k7gj2hqk1" path="res://assets/tavern.png" id="3_x5jxr"]
 [ext_resource type="Texture2D" uid="uid://bhiswue1dsa3b" path="res://assets/glassPanel_cornerTL.png" id="4_wivr8"]
+[ext_resource type="PackedScene" uid="uid://2sm02yq0l02v" path="res://body_item.tscn" id="6_tb4tw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51xfy"]
 size = Vector2(92.0132, 92.892)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xi545"]
+size = Vector2(1382, 95)
 
 [node name="ItemPlayground" type="Node2D"]
 z_index = 2
@@ -26,7 +30,7 @@ texture = ExtResource("3_x5jxr")
 
 [node name="Screen" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(943, 584)
+position = Vector2(952, 542)
 scale = Vector2(15.15, 9.215)
 texture = ExtResource("4_wivr8")
 metadata/_edit_group_ = true
@@ -36,3 +40,17 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Screen/Area2D"]
 position = Vector2(0.0660019, 0.542599)
 shape = SubResource("RectangleShape2D_51xfy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(943, 924.5)
+shape = SubResource("RectangleShape2D_xi545")
+
+[node name="RBItem" parent="." instance=ExtResource("6_tb4tw")]
+z_index = 5
+position = Vector2(1242, 393)
+
+[node name="RBItem2" parent="." instance=ExtResource("6_tb4tw")]
+z_index = 2
+position = Vector2(812, 436)
