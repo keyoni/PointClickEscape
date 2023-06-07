@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck6iuluif14sf"]
+
+[ext_resource type="Script" path="res://scenes/item/generic_item.gd" id="1_iecsa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqcmc"]
+
+[node name="GenericItem" type="Node2D"]
+script = ExtResource("1_iecsa")
+
+[node name="GenericItemSprite" type="Sprite2D" parent="."]
+
+[node name="GenericItemArea" type="Area2D" parent="GenericItemSprite"]
+
+[node name="GenericItemShape" type="CollisionShape2D" parent="GenericItemSprite/GenericItemArea"]
+shape = SubResource("RectangleShape2D_eqcmc")
+
+[connection signal="input_event" from="GenericItemSprite/GenericItemArea" to="." method="_on_generic_item_area_input_event"]

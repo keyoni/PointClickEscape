@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://rdhngiw883e4"]
+
+[ext_resource type="PackedScene" uid="uid://ck6iuluif14sf" path="res://scenes/item/generic_item.tscn" id="1_5bbnj"]
+[ext_resource type="Resource" uid="uid://c4uswsv5hl6mh" path="res://resources/items/blueShip.tres" id="2_ogfem"]
+[ext_resource type="Resource" uid="uid://64mjihmn2y0p" path="res://resources/items/redBook.tres" id="3_a1om5"]
+[ext_resource type="PackedScene" uid="uid://bxm1ctu0weonj" path="res://scenes/inventory_slot/inventory_slot.tscn" id="4_dor6a"]
+[ext_resource type="Resource" uid="uid://d2u8rtl7ktjtd" path="res://resources/items/redCycle.tres" id="5_fcu5v"]
+
+[node name="Playground" type="Node2D"]
+
+[node name="BlueShip" parent="." instance=ExtResource("1_5bbnj")]
+position = Vector2(805, 402)
+item_resource = ExtResource("2_ogfem")
+
+[node name="RedBook" parent="." instance=ExtResource("1_5bbnj")]
+position = Vector2(901, 402)
+item_resource = ExtResource("3_a1om5")
+
+[node name="InventorySlot" parent="." instance=ExtResource("4_dor6a")]
+position = Vector2(579, 416)
+item_resource = ExtResource("2_ogfem")
+
+[node name="InventorySlot2" parent="." instance=ExtResource("4_dor6a")]
+position = Vector2(439, 417)
+item_resource = ExtResource("5_fcu5v")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c4uswsv5hl6mh"]
+
+[ext_resource type="Script" path="res://resources/item.gd" id="1_xtuki"]
+[ext_resource type="Texture2D" uid="uid://bveutat3e0a2l" path="res://assets/items/ship (5).png" id="2_puljd"]
+
+[resource]
+script = ExtResource("1_xtuki")
+name = "Blue Ship"
+texture = ExtResource("2_puljd")
+description = ""
