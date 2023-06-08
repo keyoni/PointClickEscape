@@ -8,16 +8,16 @@
 [ext_resource type="Resource" uid="uid://c4uswsv5hl6mh" path="res://resources/items/blueShip.tres" id="6_tachf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3anlj"]
-size = Vector2(1933, 100)
+size = Vector2(1933, 155)
 
 [node name="InventoryBar" type="Node2D"]
 script = ExtResource("1_wbm0d")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(960, 1025)
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -27.5)
 shape = SubResource("RectangleShape2D_3anlj")
 
 [node name="InventoryHolder" type="Node2D" parent="."]
