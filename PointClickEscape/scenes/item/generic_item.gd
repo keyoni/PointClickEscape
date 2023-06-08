@@ -5,6 +5,7 @@ var selected = false
 var snappable = false
 var savedZ;
 signal released
+var savedParent
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$GenericItemSprite.texture = item_resource.texture
@@ -22,10 +23,28 @@ func _on_generic_item_area_input_event(viewport: Node, event: InputEvent, shape_
 		selected = true
 		DragManager.set_dragged_item(self)
 		self.z_index = 20
+		# When clicked, change item's parent to the GlobalDragLayer node
+		if get_tree().get_root().has_node("GlobalDragLayer"):
+			savedParent = self.get_parent()
+			print(savedParent)
+			self.reparent(get_node("GlobalDragLayer"), true)
+
 func _physics_process(delta: float) -> void:
 	if selected:
 		global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
 		
+			#if selected:
+			#var current_position = global_position
+			#var target_position = get_global_mouse_position()
+			
+			# Calculate the position change manually
+			#var position_change = target_position - current_position
+			#var move_speed = 25 * delta
+			#var max_move_distance = position_change.length() * move_speed
+			#position_change = position_change.normalized() * min(position_change.length(), max_move_distance)
+			
+			# Update the global position directly
+			#global_position = current_position + position_change
 		
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -33,6 +52,8 @@ func _input(event: InputEvent) -> void:
 			selected = false
 			DragManager.release_dragged_item()
 			self.z_index = savedZ
+			if self.get_tree().get_root().has_node("GlobalDragLayer"):
+				self.reparent(savedParent, true)
 			released.emit()
 
 

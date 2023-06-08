@@ -1,46 +1,32 @@
-[gd_scene load_steps=8 format=3 uid="uid://c15j4wp5x0tmi"]
+[gd_scene load_steps=4 format=3 uid="uid://c15j4wp5x0tmi"]
 
 [ext_resource type="Script" path="res://scenes/inventory_bar/inventory_bar.gd" id="1_wbm0d"]
 [ext_resource type="Script" path="res://scenes/inventory_bar/InventoryHolder.gd" id="2_hxh73"]
-[ext_resource type="PackedScene" uid="uid://bxm1ctu0weonj" path="res://scenes/inventory_slot/inventory_slot.tscn" id="3_qj503"]
-[ext_resource type="Resource" uid="uid://64mjihmn2y0p" path="res://resources/items/redBook.tres" id="4_a7wce"]
-[ext_resource type="Resource" uid="uid://d2u8rtl7ktjtd" path="res://resources/items/redCycle.tres" id="5_q8yh7"]
-[ext_resource type="Resource" uid="uid://c4uswsv5hl6mh" path="res://resources/items/blueShip.tres" id="6_tachf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3anlj"]
 size = Vector2(1933, 155)
 
 [node name="InventoryBar" type="Node2D"]
+position = Vector2(969, 998)
 script = ExtResource("1_wbm0d")
+metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(960, 1025)
+position = Vector2(0, 27)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -27.5)
 shape = SubResource("RectangleShape2D_3anlj")
 
 [node name="InventoryHolder" type="Node2D" parent="."]
-position = Vector2(960, 1200)
+position = Vector2(0, 202)
 script = ExtResource("2_hxh73")
 
-[node name="InventorySlot" parent="InventoryHolder" instance=ExtResource("3_qj503")]
-position = Vector2(-11, 0)
-item_resource = ExtResource("4_a7wce")
-
-[node name="InventorySlot2" parent="InventoryHolder" instance=ExtResource("3_qj503")]
-position = Vector2(130, 0)
-item_resource = ExtResource("5_q8yh7")
-
-[node name="InventorySlot3" parent="InventoryHolder" instance=ExtResource("3_qj503")]
-position = Vector2(-155, 4)
-item_resource = ExtResource("6_tachf")
-
 [node name="InvTopMarker" type="Marker2D" parent="."]
-position = Vector2(960, 950)
+position = Vector2(0, -48)
 
 [node name="InvBottomMarker" type="Marker2D" parent="."]
-position = Vector2(960, 1200)
+position = Vector2(0, 200)
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_entered" from="Area2D" to="InventoryHolder" method="_on_area_2d_mouse_entered"]

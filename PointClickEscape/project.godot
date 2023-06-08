@@ -18,11 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalData="*res://singletons/GlobalData.gd"
-<<<<<<<UpdatedupstreamGlobalData="*res://singletons/GlobalData.gd"
-Globals="*res://addons/godot_helper_pack/core/globals.gd"
-SignalMgr="*res://addons/godot_helper_pack/core/signal_mgr.gd"
-ServiceMgr="*res://addons/godot_helper_pack/core/service_mgr.gd"
-GlobalBlockingColorChangeMonitor="*res://addons/godot_helper_pack/core/2d/shape/global_blocking_color_monitor.tscn"
 DragManager="*res://singletons/DragManager.gd"
 
 [display]
@@ -32,7 +27,7 @@ window/size/viewport_height=1080
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_helper_pack/plugin.cfg")
+enabled=PackedStringArray()
 
 [godot_helper_pack_plugin]
 

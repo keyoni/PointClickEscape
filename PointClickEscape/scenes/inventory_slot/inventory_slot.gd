@@ -8,14 +8,17 @@ signal snapItem
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var slot_sprite = $Base.get_node("Slot")
+	#Adds hole to base for item
 	slot_sprite.texture = item_resource.texture
 	slot_sprite.set_self_modulate(Color(0,0,0))
 	slot_sprite_scale()
+	#Addes draggable item
 	var item = item_type.instantiate()
 	item.item_resource = self.	item_resource
 	item.snappable = true
 	item.connect("released", snap_back)
 	add_child(item)
+	# Scales item to fit in slot
 	item.get_child(0).scale = scaled
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,7 +30,7 @@ func slot_sprite_scale():
 	var slot_sprite = base_sprite.get_node("Slot")
 
 	# Get the dimensions of base_sprite and slot_sprite textures.
-	var base_sprite_size = base_sprite.texture.get_size()
+	var base_sprite_size = get_base_size()
 	var slot_sprite_size = slot_sprite.texture.get_size()
 
 	# Calculate the scale for the slot sprite to fit within the base sprite.
@@ -47,4 +50,7 @@ func snap_back():
 	var item_obj = self.get_child(1)
 	item_obj.set_global_position( self.get_node("Base/Slot").get_global_position())
 
-	
+
+func get_base_size():
+	var base_sprite = $Base
+	return base_sprite.texture.get_size()
