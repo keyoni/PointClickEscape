@@ -1,32 +1,52 @@
-[gd_scene load_steps=4 format=3 uid="uid://21fxr8uunmya"]
+[gd_scene load_steps=10 format=3 uid="uid://cetvbnk4tn3af"]
 
 [ext_resource type="Texture2D" uid="uid://kj028jq76ptr" path="res://Assets/Backgrounds/pce2PanelBackground2.png" id="1_l23ry"]
-[ext_resource type="Script" path="res://Game1.gd" id="2_4fxa7"]
+[ext_resource type="Script" path="res://Game1.gd" id="2_vuel7"]
+[ext_resource type="Shader" path="res://highlight.gdshader" id="3_hbtal"]
+[ext_resource type="Shader" path="res://pixelate.gdshader" id="3_hh4do"]
+[ext_resource type="Texture2D" uid="uid://bfrw0n7arthhb" path="res://empty.png" id="4_gu5t0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a18ub"]
+shader = ExtResource("3_hbtal")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kk3mo"]
+shader = ExtResource("3_hh4do")
+shader_parameter/amount = 512
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvmnb"]
 size = Vector2(131, 101)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kp5b0"]
+shader = ExtResource("3_hbtal")
 
 [node name="Main" type="Node2D"]
 
 [node name="Pce2PanelBackground2" type="Sprite2D" parent="."]
 visible = false
+material = SubResource("ShaderMaterial_a18ub")
 position = Vector2(573.5, 330.5)
 scale = Vector2(0.393887, 0.405024)
 texture = ExtResource("1_l23ry")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -17.0
-offset_top = -8.0
-offset_right = 1929.0
-offset_bottom = 1086.0
+material = SubResource("ShaderMaterial_kk3mo")
+offset_left = -5.0
+offset_top = 5.0
+offset_right = 1941.0
+offset_bottom = 1099.0
 texture = ExtResource("1_l23ry")
 expand_mode = 2
 
 [node name="Game1" type="Area2D" parent="."]
-position = Vector2(525, 407)
-script = ExtResource("2_4fxa7")
+position = Vector2(523, 423)
+script = ExtResource("2_vuel7")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game1"]
 position = Vector2(46.5, 46.5)
 shape = SubResource("RectangleShape2D_pvmnb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_kp5b0")
+position = Vector2(585, 598)
+texture = ExtResource("4_gu5t0")

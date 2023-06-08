@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3lybil15o333"]
+
+[ext_resource type="PackedScene" uid="uid://bhrcxsrrepcea" path="res://drop_zone.tscn" id="1_js2nr"]
+[ext_resource type="PackedScene" uid="uid://dnufae1wc8dfx" path="res://drandrop.tscn" id="2_cfxkg"]
+
+[node name="=== Test Zone ===" type="Node"]
+
+[node name="drop_zone" parent="." instance=ExtResource("1_js2nr")]
+position = Vector2(204, 116)
+
+[node name="drop_zone2" parent="." instance=ExtResource("1_js2nr")]
+position = Vector2(187, 371)
+
+[node name="drop_zone3" parent="." instance=ExtResource("1_js2nr")]
+position = Vector2(615, 236)
+
+[node name="DraggableObject" parent="." instance=ExtResource("2_cfxkg")]
+position = Vector2(466, 416)

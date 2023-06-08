@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c8ivevecbpwxk"]
+
+[node name="pop_up_game_1" type="Node2D"]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 588.0
+offset_top = 272.0
+offset_right = 1308.0
+offset_bottom = 752.0
+metadata/_edit_group_ = true
+
+[node name="Panel" type="Panel" parent="PanelContainer"]
+layout_mode = 2
