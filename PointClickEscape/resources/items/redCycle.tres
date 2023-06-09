@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://d2u8rtl7ktjtd"]
+
+[ext_resource type="Script" path="res://resources/item.gd" id="1_vhiw4"]
+[ext_resource type="Texture2D" uid="uid://3cejhvqs1vxf" path="res://assets/items/motorcycle_red.png" id="2_ytdwn"]
+
+[resource]
+script = ExtResource("1_vhiw4")
+name = "Red Motorcycle"
+texture = ExtResource("2_ytdwn")
+description = "A rRed Motorcycle"

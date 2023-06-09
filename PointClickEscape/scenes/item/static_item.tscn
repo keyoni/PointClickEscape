@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://df4mbp8f1l2bd"]
+
+[ext_resource type="Script" path="res://scenes/item/static_item.gd" id="1_056g1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqcmc"]
+
+[node name="StaticItem" type="Node2D" groups=["static_items"]]
+script = ExtResource("1_056g1")
+
+[node name="StaticItemSprite" type="Sprite2D" parent="."]
+
+[node name="StaticItemArea" type="Area2D" parent="StaticItemSprite"]
+
+[node name="StaticItemShape" type="CollisionShape2D" parent="StaticItemSprite/StaticItemArea"]
+shape = SubResource("RectangleShape2D_eqcmc")
+
+[connection signal="input_event" from="StaticItemSprite/StaticItemArea" to="." method="_on_static_item_area_input_event"]

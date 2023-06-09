@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://du6ndik0kn7ya"]
+
+[ext_resource type="Script" path="res://resources/item.gd" id="1_knxo3"]
+[ext_resource type="Texture2D" uid="uid://dmh5dvayfgnww" path="res://assets/items/toaster.png" id="2_v7abl"]
+
+[resource]
+script = ExtResource("1_knxo3")
+name = "Toaster"
+texture = ExtResource("2_v7abl")
+description = ""

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://64mjihmn2y0p"]
+
+[ext_resource type="Script" path="res://resources/item.gd" id="1_8jt5l"]
+[ext_resource type="Texture2D" uid="uid://dgl4v4r7yll7b" path="res://assets/items/genericItem_color_035.png" id="2_lae1t"]
+
+[resource]
+script = ExtResource("1_8jt5l")
+name = "Red Book"
+texture = ExtResource("2_lae1t")
+description = "A Red Book"

@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://c15j4wp5x0tmi"]
+
+[ext_resource type="Script" path="res://scenes/inventory_bar/inventory_bar.gd" id="1_wbm0d"]
+[ext_resource type="Script" path="res://scenes/inventory_bar/InventoryHolder.gd" id="2_hxh73"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3anlj"]
+size = Vector2(1933, 155)
+
+[node name="InventoryBar" type="Node2D"]
+position = Vector2(969, 998)
+script = ExtResource("1_wbm0d")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 27)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -27.5)
+shape = SubResource("RectangleShape2D_3anlj")
+
+[node name="InventoryHolder" type="Node2D" parent="."]
+position = Vector2(0, 202)
+script = ExtResource("2_hxh73")
+
+[node name="InvTopMarker" type="Marker2D" parent="."]
+position = Vector2(0, -48)
+
+[node name="InvBottomMarker" type="Marker2D" parent="."]
+position = Vector2(0, 200)
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_entered" from="Area2D" to="InventoryHolder" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_exited" from="Area2D" to="InventoryHolder" method="_on_area_2d_mouse_exited"]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=11 format=3 uid="uid://rdhngiw883e4"]
+
+[ext_resource type="PackedScene" uid="uid://ck6iuluif14sf" path="res://scenes/item/generic_item.tscn" id="1_5bbnj"]
+[ext_resource type="Resource" uid="uid://c4uswsv5hl6mh" path="res://resources/items/blueShip.tres" id="2_ogfem"]
+[ext_resource type="Resource" uid="uid://64mjihmn2y0p" path="res://resources/items/redBook.tres" id="3_a1om5"]
+[ext_resource type="PackedScene" uid="uid://bxm1ctu0weonj" path="res://scenes/inventory_slot/inventory_slot.tscn" id="4_dor6a"]
+[ext_resource type="Resource" uid="uid://d2u8rtl7ktjtd" path="res://resources/items/redCycle.tres" id="5_fcu5v"]
+[ext_resource type="Texture2D" uid="uid://dmh5dvayfgnww" path="res://assets/items/toaster.png" id="5_g1wlg"]
+[ext_resource type="PackedScene" uid="uid://df4mbp8f1l2bd" path="res://scenes/item/static_item.tscn" id="6_7bvsi"]
+[ext_resource type="Resource" uid="uid://du6ndik0kn7ya" path="res://resources/items/toaster.tres" id="7_jhmrn"]
+[ext_resource type="Resource" uid="uid://cuy8k0527d1im" path="res://resources/items/small_key.tres" id="8_uvfn1"]
+[ext_resource type="PackedScene" uid="uid://c15j4wp5x0tmi" path="res://scenes/inventory_bar/inventory_bar.tscn" id="9_qxi16"]
+
+[node name="Playground" type="Node2D"]
+
+[node name="BlueShip" parent="." instance=ExtResource("1_5bbnj")]
+position = Vector2(805, 167)
+item_resource = ExtResource("2_ogfem")
+
+[node name="RedBook" parent="." instance=ExtResource("1_5bbnj")]
+position = Vector2(901, 167)
+item_resource = ExtResource("3_a1om5")
+
+[node name="InventorySlot" parent="." instance=ExtResource("4_dor6a")]
+position = Vector2(579, 181)
+item_resource = ExtResource("2_ogfem")
+
+[node name="Base" parent="InventorySlot" index="0"]
+texture = ExtResource("5_g1wlg")
+
+[node name="InventorySlot2" parent="." instance=ExtResource("4_dor6a")]
+position = Vector2(439, 182)
+item_resource = ExtResource("5_fcu5v")
+
+[node name="Toaster" parent="." instance=ExtResource("6_7bvsi")]
+position = Vector2(1005, 345)
+item_resource = ExtResource("7_jhmrn")
+ItemState = "None"
+
+[node name="SmallKey" parent="." instance=ExtResource("6_7bvsi")]
+position = Vector2(835, 346)
+item_resource = ExtResource("8_uvfn1")
+ItemState = "PickUp"
+
+[node name="InventoryBar" parent="." instance=ExtResource("9_qxi16")]
+position = Vector2(964, 570)
+
+[editable path="InventorySlot"]

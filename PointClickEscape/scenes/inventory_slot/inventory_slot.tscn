@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxm1ctu0weonj"]
+
+[ext_resource type="Script" path="res://scenes/inventory_slot/inventory_slot.gd" id="1_0ckyh"]
+[ext_resource type="Texture2D" uid="uid://5xi0tjuxro3r" path="res://assets/items/metalPanel.png" id="1_smx5l"]
+[ext_resource type="PackedScene" uid="uid://dxu2ogqof1ns7" path="res://scenes/snap_point/snap_point.tscn" id="3_dq6r8"]
+
+[node name="InventorySlot" type="Node2D"]
+script = ExtResource("1_0ckyh")
+
+[node name="Base" type="Sprite2D" parent="."]
+texture = ExtResource("1_smx5l")
+
+[node name="SnapPoint" parent="Base" instance=ExtResource("3_dq6r8")]
+
+[node name="Slot" type="Sprite2D" parent="Base"]
