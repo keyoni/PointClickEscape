@@ -17,7 +17,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func _on_generic_item_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_action_pressed("left_mouse_click") and not DragManager.is_dragging_item():
 		selected = true
@@ -26,7 +25,6 @@ func _on_generic_item_area_input_event(viewport: Node, event: InputEvent, shape_
 		# When clicked, change item's parent to the GlobalDragLayer node
 		if get_tree().get_root().has_node("GlobalDragLayer"):
 			savedParent = self.get_parent()
-			print(savedParent)
 			self.reparent(get_node("GlobalDragLayer"), true)
 
 func _physics_process(delta: float) -> void:

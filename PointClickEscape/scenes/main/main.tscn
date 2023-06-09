@@ -7,8 +7,10 @@
 [ext_resource type="Resource" uid="uid://cuy8k0527d1im" path="res://resources/items/small_key.tres" id="5_u8as7"]
 
 [node name="Main" type="Node2D"]
+metadata/_edit_lock_ = true
 
 [node name="GlobalDragLayer" type="Node2D" parent="."]
+visible = false
 
 [node name="Pce2PanelBackground2" type="Sprite2D" parent="."]
 visible = false
@@ -32,7 +34,17 @@ position = Vector2(1385, 841)
 item_resource = ExtResource("4_vpp3d")
 ItemState = "PickUp"
 
+[node name="Book2" parent="." instance=ExtResource("3_o5sdf")]
+position = Vector2(1266, 821)
+item_resource = ExtResource("4_vpp3d")
+ItemState = "PickUp"
+
 [node name="Key" parent="." instance=ExtResource("3_o5sdf")]
 position = Vector2(513, 835)
+item_resource = ExtResource("5_u8as7")
+ItemState = "PickUp"
+
+[node name="Key2" parent="." instance=ExtResource("3_o5sdf")]
+position = Vector2(603, 829)
 item_resource = ExtResource("5_u8as7")
 ItemState = "PickUp"

@@ -15,14 +15,10 @@ func _ready() -> void:
 	var rectShape = RectangleShape2D.new()
 	rectShape.extents = Vector2($StaticItemSprite.texture.get_size())
 	$StaticItemSprite/StaticItemArea/StaticItemShape.shape = rectShape
-# Called when the node enters the scene tree for the first time.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-
 
 func _on_static_item_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_action_just_released("left_mouse_click") and selected == false:
@@ -30,14 +26,11 @@ func _on_static_item_area_input_event(viewport: Node, event: InputEvent, shape_i
 		# I realise that I can get rid of this match/switch statement, but I'm keeping it case we want to do more stuff depending on the items :)
 		match ItemState:
 			"PickUp":
-				print("We are number one!")
 				released_pick_up.emit(item_resource)
-				print("DELETE ME!")
 				# Maybe a cool fade or something then delete
 				await get_tree().create_timer(0.2).timeout
 				queue_free()
 			"None":
-				print("Two are better than one!")
 				released_none.emit()
 			_:
 				print("Oh snap! It's a somthing broke!")
