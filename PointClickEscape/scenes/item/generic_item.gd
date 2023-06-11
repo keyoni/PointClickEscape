@@ -2,10 +2,13 @@ extends Node2D
 
 @export var item_resource : Item
 var selected = false
-var snappable = false
+@export var snappable = false
+@export var inventoryItem = false
 var savedZ;
 signal released
+signal snappedToPoint
 var savedParent
+var original_position
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$GenericItemSprite.texture = item_resource.texture
@@ -13,6 +16,7 @@ func _ready() -> void:
 	rectShape.extents = Vector2($GenericItemSprite.texture.get_size())
 	$GenericItemSprite/GenericItemArea/GenericItemShape.shape = rectShape
 	savedZ = self.z_index
+	self.connect("released",update_snapping)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -49,9 +53,52 @@ func _input(event: InputEvent) -> void:
 		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed and selected == true:
 			selected = false
 			DragManager.release_dragged_item()
-			self.z_index = savedZ
+			original_position = self.get_global_position()
 			if self.get_tree().get_root().has_node("GlobalDragLayer"):
 				self.reparent(savedParent, true)
 			released.emit()
 
 
+func update_snapping():
+	if snappable and selected == false:
+		# Get overlapping Drag Items
+		
+
+		# Get overlapping Snap Points
+		var snap_points = get_tree().get_nodes_in_group("snap_points")
+		print(snap_points)
+
+		var closest_snap_point = null
+		var min_distance = 999.999
+		print("snapping!")
+		for snap_point in snap_points:
+			var snap_detector_area = snap_point.get_node("SnapDetectorArea")
+			if snap_detector_area.overlaps_area($GenericItemSprite/GenericItemArea):
+				print(self.global_position,"and", snap_point.get_global_position())
+				var distance = self.global_position.distance_to(snap_point.get_global_position())
+				print(snap_point.global_position)
+				print(distance)
+				if distance < min_distance:
+					min_distance = distance
+					closest_snap_point = snap_point
+
+			#print(closest_snap_point.global_position)
+			if closest_snap_point:
+				self.set_global_position(closest_snap_point.get_global_position())
+
+				if inventoryItem:
+					snappedToPoint.emit()
+			else:
+				# No overlapping items, only snap when dragged over snap point area
+				self.set_global_position(original_position)
+	else:
+	# No snapping, just return to the original position
+		pass
+
+			#print("snapping!")
+			#print(closest_body.global_position)
+			#print(self.global_position)
+			#self.set_global_position(closest_body.get_global_position()) 
+			#print(self.global_position)
+			#var tween = create_tween()
+			#tween.tween_property(self, "global_position",closest_body.get_global_position(),0.5).set_ease(Tween.EASE_IN_OUT)

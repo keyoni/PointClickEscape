@@ -1,11 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxu2ogqof1ns7"]
+[gd_scene load_steps=3 format=3 uid="uid://dxu2ogqof1ns7"]
+
+[ext_resource type="Script" path="res://scenes/snap_point/snap_point.gd" id="1_fr4me"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0bflj"]
 
-[node name="SnapPoint" type="Node2D"]
+[node name="SnapPoint" type="Node2D" groups=["snap_points"]]
+script = ExtResource("1_fr4me")
 
-[node name="SnapArea" type="Area2D" parent="."]
+[node name="SnapDetectorArea" type="Area2D" parent="."]
 
-[node name="SnapShape" type="CollisionShape2D" parent="SnapArea"]
+[node name="SnapShape" type="CollisionShape2D" parent="SnapDetectorArea"]
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_0bflj")

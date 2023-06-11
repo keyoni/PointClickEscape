@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://d0s2p0w1xsqu0"]
+
+[ext_resource type="Script" path="res://resources/item.gd" id="1_ojgb4"]
+[ext_resource type="Texture2D" uid="uid://dxv7x6u7ax2hv" path="res://assets/shapes/Shape-03.png" id="2_ykgvm"]
+
+[resource]
+script = ExtResource("1_ojgb4")
+name = "Five Shape"
+texture = ExtResource("2_ykgvm")
+description = ""

@@ -5,6 +5,7 @@ extends Node2D
 var item_type = preload("res://scenes/item/generic_item.tscn")
 var scaled
 signal snapItem
+var group
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var slot_sprite = $Base.get_node("Slot")
@@ -16,6 +17,7 @@ func _ready() -> void:
 	var item = item_type.instantiate()
 	item.item_resource = self.	item_resource
 	item.snappable = true
+	item.inventoryItem = true
 	item.connect("released", snap_back)
 	add_child(item)
 	# Scales item to fit in slot
@@ -54,3 +56,4 @@ func snap_back():
 func get_base_size():
 	var base_sprite = $Base
 	return base_sprite.texture.get_size()
+	

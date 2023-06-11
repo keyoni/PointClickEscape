@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b64fjre5ha2x1"]
+
+[ext_resource type="Script" path="res://resources/item.gd" id="1_kpuys"]
+[ext_resource type="Texture2D" uid="uid://b5x884jna5uul" path="res://assets/shapes/Shape-04.png" id="2_7e7se"]
+
+[resource]
+script = ExtResource("1_kpuys")
+name = "Six Shape"
+texture = ExtResource("2_7e7se")
+description = ""

@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6wdp3job3ju4"]
+[gd_scene load_steps=8 format=3 uid="uid://b6wdp3job3ju4"]
 
 [ext_resource type="Texture2D" uid="uid://kj028jq76ptr" path="res://assets/backgrounds/pce2PanelBackground2.png" id="1_m1qn6"]
 [ext_resource type="PackedScene" uid="uid://c15j4wp5x0tmi" path="res://scenes/inventory_bar/inventory_bar.tscn" id="2_0ydoa"]
 [ext_resource type="PackedScene" uid="uid://df4mbp8f1l2bd" path="res://scenes/item/static_item.tscn" id="3_o5sdf"]
 [ext_resource type="Resource" uid="uid://64mjihmn2y0p" path="res://resources/items/redBook.tres" id="4_vpp3d"]
 [ext_resource type="Resource" uid="uid://cuy8k0527d1im" path="res://resources/items/small_key.tres" id="5_u8as7"]
+[ext_resource type="Script" path="res://scenes/main/ShapePuzzleArea.gd" id="6_aw3r6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_moylx"]
+size = Vector2(104, 79)
 
 [node name="Main" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -48,3 +52,16 @@ ItemState = "PickUp"
 position = Vector2(603, 829)
 item_resource = ExtResource("5_u8as7")
 ItemState = "PickUp"
+
+[node name="ShapePuzzleArea" type="Area2D" parent="."]
+position = Vector2(563, 460)
+script = ExtResource("6_aw3r6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShapePuzzleArea"]
+position = Vector2(10, -6.5)
+shape = SubResource("RectangleShape2D_moylx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(947, 557)
+
+[connection signal="input_event" from="ShapePuzzleArea" to="ShapePuzzleArea" method="_on_input_event"]

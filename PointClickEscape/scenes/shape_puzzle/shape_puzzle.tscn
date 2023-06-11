@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://desbxtks667hk"]
+
+[ext_resource type="Texture2D" uid="uid://ccj2clgcesn08" path="res://assets/items/glassPanelx5-export.png" id="1_mjg3t"]
+[ext_resource type="Script" path="res://scenes/shape_puzzle/shape_puzzle.gd" id="1_npvun"]
+[ext_resource type="PackedScene" uid="uid://dxu2ogqof1ns7" path="res://scenes/snap_point/snap_point.tscn" id="3_5qgg5"]
+[ext_resource type="Texture2D" uid="uid://dmh5dvayfgnww" path="res://assets/items/toaster.png" id="4_ua1v4"]
+[ext_resource type="Texture2D" uid="uid://bt3sjlkvdpffp" path="res://assets/items/small_key.png" id="4_yolit"]
+[ext_resource type="PackedScene" uid="uid://ck6iuluif14sf" path="res://scenes/item/generic_item.tscn" id="4_yoobi"]
+[ext_resource type="Resource" uid="uid://cjc4im35dqgqi" path="res://resources/items/three_shape.tres" id="5_l6xnp"]
+
+[node name="shape_puzzle" type="Node2D"]
+script = ExtResource("1_npvun")
+
+[node name="GlassPanelx5-export" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.458833, 0.2775)
+texture = ExtResource("1_mjg3t")
+metadata/_edit_lock_ = true
+
+[node name="SnapPoint" parent="." instance=ExtResource("3_5qgg5")]
+position = Vector2(642, 491)
+scale = Vector2(0.3, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="SnapPoint"]
+texture = ExtResource("4_ua1v4")
+
+[node name="SnapPoint2" parent="." instance=ExtResource("3_5qgg5")]
+position = Vector2(1210, 499)
+scale = Vector2(0.3, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="SnapPoint2"]
+texture = ExtResource("4_yolit")
+
+[node name="ThreeShape" parent="." instance=ExtResource("4_yoobi")]
+position = Vector2(1389, 244)
+scale = Vector2(0.2, 0.2)
+item_resource = ExtResource("5_l6xnp")
+snappable = true
+metadata/_edit_group_ = true
