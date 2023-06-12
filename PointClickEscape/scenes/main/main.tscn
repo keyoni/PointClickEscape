@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6wdp3job3ju4"]
+[gd_scene load_steps=7 format=3 uid="uid://b6wdp3job3ju4"]
 
-[ext_resource type="Texture2D" uid="uid://kj028jq76ptr" path="res://assets/backgrounds/pce2PanelBackground2.png" id="1_m1qn6"]
+[ext_resource type="Texture2D" uid="uid://kj028jq76ptr" path="res://Assets/Backgrounds/pce2PanelBackground2.png" id="1_m1qn6"]
 [ext_resource type="PackedScene" uid="uid://c15j4wp5x0tmi" path="res://scenes/inventory_bar/inventory_bar.tscn" id="2_0ydoa"]
 [ext_resource type="PackedScene" uid="uid://df4mbp8f1l2bd" path="res://scenes/item/static_item.tscn" id="3_o5sdf"]
-[ext_resource type="Resource" uid="uid://64mjihmn2y0p" path="res://resources/items/redBook.tres" id="4_vpp3d"]
+[ext_resource type="Resource" path="res://resources/items/redBook.tres" id="4_vpp3d"]
 [ext_resource type="Resource" uid="uid://cuy8k0527d1im" path="res://resources/items/small_key.tres" id="5_u8as7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h1dek"]
 
 [node name="Main" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -19,6 +21,7 @@ scale = Vector2(0.393887, 0.405024)
 texture = ExtResource("1_m1qn6")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_h1dek")
 offset_left = -17.0
 offset_top = -8.0
 offset_right = 1929.0

@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyt0yqb7f0hls"]
+
+[ext_resource type="Script" path="res://scenes/dialogue/Dialogue.gd" id="1_wrs7t"]
+[ext_resource type="Texture2D" uid="uid://cxges2yl2q7xx" path="res://scenes/dialogue/glassPanel_projection.png" id="2_atxlo"]
+[ext_resource type="FontFile" uid="uid://c0r2oc3m2sh6j" path="res://scenes/dialogue/kenvector_future.ttf" id="3_cb238"]
+[ext_resource type="AudioStream" uid="uid://n5wex2gkvwxv" path="res://Assets/Audio/blop.mp3" id="4_v5q4r"]
+[ext_resource type="Script" path="res://scenes/dialogue/DialogueVoicePlayer.gd" id="5_7oy0n"]
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wrs7t")
+
+[node name="Background" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 716.0
+offset_top = 700.0
+offset_right = 1240.0
+offset_bottom = 895.0
+texture = ExtResource("2_atxlo")
+patch_margin_left = 5
+patch_margin_top = 9
+patch_margin_right = 5
+patch_margin_bottom = 9
+
+[node name="Content" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 725.0
+offset_top = 711.0
+offset_right = 1228.0
+offset_bottom = 883.0
+theme_override_fonts/normal_font = ExtResource("3_cb238")
+theme_override_fonts/bold_font = ExtResource("3_cb238")
+theme_override_fonts/italics_font = ExtResource("3_cb238")
+theme_override_fonts/bold_italics_font = ExtResource("3_cb238")
+theme_override_fonts/mono_font = ExtResource("3_cb238")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+
+[node name="TypeTyper" type="Timer" parent="."]
+wait_time = 0.04
+
+[node name="PauseTimer" type="Timer" parent="."]
+wait_time = 0.581
+
+[node name="DialogueVoicePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_v5q4r")
+volume_db = -21.047
+pitch_scale = 0.81
+script = ExtResource("5_7oy0n")
+
+[connection signal="timeout" from="TypeTyper" to="." method="_on_TypeTyper_timeout"]
+[connection signal="finished" from="DialogueVoicePlayer" to="." method="_on_DialogueVoicePlayer_finished"]

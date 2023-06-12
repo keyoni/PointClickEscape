@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3cejhvqs1vxf"
-path="res://.godot/imported/motorcycle_red.png-feea5e598c329ed98bb2316592532eeb.ctex"
+uid="uid://cxges2yl2q7xx"
+path="res://.godot/imported/glassPanel_projection.png-1608ee4944abe32d9ae92aea9af3d5cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/items/motorcycle_red.png"
-dest_files=["res://.godot/imported/motorcycle_red.png-feea5e598c329ed98bb2316592532eeb.ctex"]
+source_file="res://scenes/dialogue/glassPanel_projection.png"
+dest_files=["res://.godot/imported/glassPanel_projection.png-1608ee4944abe32d9ae92aea9af3d5cb.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

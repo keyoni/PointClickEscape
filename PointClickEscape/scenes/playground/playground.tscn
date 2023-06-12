@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://ck6iuluif14sf" path="res://scenes/item/generic_item.tscn" id="1_5bbnj"]
 [ext_resource type="Resource" uid="uid://c4uswsv5hl6mh" path="res://resources/items/blueShip.tres" id="2_ogfem"]
-[ext_resource type="Resource" uid="uid://64mjihmn2y0p" path="res://resources/items/redBook.tres" id="3_a1om5"]
+[ext_resource type="Resource" path="res://resources/items/redBook.tres" id="3_a1om5"]
 [ext_resource type="PackedScene" uid="uid://bxm1ctu0weonj" path="res://scenes/inventory_slot/inventory_slot.tscn" id="4_dor6a"]
 [ext_resource type="Resource" uid="uid://d2u8rtl7ktjtd" path="res://resources/items/redCycle.tres" id="5_fcu5v"]
-[ext_resource type="Texture2D" uid="uid://dmh5dvayfgnww" path="res://assets/items/toaster.png" id="5_g1wlg"]
+[ext_resource type="Texture2D" uid="uid://dmh5dvayfgnww" path="res://Assets/items/toaster.png" id="5_g1wlg"]
 [ext_resource type="PackedScene" uid="uid://df4mbp8f1l2bd" path="res://scenes/item/static_item.tscn" id="6_7bvsi"]
 [ext_resource type="Resource" uid="uid://du6ndik0kn7ya" path="res://resources/items/toaster.tres" id="7_jhmrn"]
 [ext_resource type="Resource" uid="uid://cuy8k0527d1im" path="res://resources/items/small_key.tres" id="8_uvfn1"]

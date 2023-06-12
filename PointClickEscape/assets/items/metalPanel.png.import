@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5xi0tjuxro3r"
-path="res://.godot/imported/metalPanel.png-59c7a61cde8cb26cc9ee99ab4c5bb680.ctex"
+path="res://.godot/imported/metalPanel.png-690a96838221795bfe24b00dcd2ceedd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/items/metalPanel.png"
-dest_files=["res://.godot/imported/metalPanel.png-59c7a61cde8cb26cc9ee99ab4c5bb680.ctex"]
+source_file="res://Assets/items/metalPanel.png"
+dest_files=["res://.godot/imported/metalPanel.png-690a96838221795bfe24b00dcd2ceedd.ctex"]
 
 [params]
 
