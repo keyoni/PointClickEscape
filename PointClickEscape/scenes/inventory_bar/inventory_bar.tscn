@@ -7,7 +7,7 @@
 size = Vector2(1933, 155)
 
 [node name="InventoryBar" type="Node2D"]
-position = Vector2(969, 998)
+position = Vector2(967, 1084)
 script = ExtResource("1_wbm0d")
 metadata/_edit_group_ = true
 

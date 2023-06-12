@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ShapeInfo" load_steps=2 format=3 uid="uid://crw3c06wsb6gr"]
+
+[ext_resource type="Script" path="res://resources/shape_info.gd" id="1_8gaob"]
+
+[resource]
+script = ExtResource("1_8gaob")
+number_of_sides = 3

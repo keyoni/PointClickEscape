@@ -1,12 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://desbxtks667hk"]
+[gd_scene load_steps=17 format=3 uid="uid://desbxtks667hk"]
 
 [ext_resource type="Texture2D" uid="uid://ccj2clgcesn08" path="res://assets/items/glassPanelx5-export.png" id="1_mjg3t"]
 [ext_resource type="Script" path="res://scenes/shape_puzzle/shape_puzzle.gd" id="1_npvun"]
 [ext_resource type="PackedScene" uid="uid://dxu2ogqof1ns7" path="res://scenes/snap_point/snap_point.tscn" id="3_5qgg5"]
-[ext_resource type="Texture2D" uid="uid://dmh5dvayfgnww" path="res://assets/items/toaster.png" id="4_ua1v4"]
-[ext_resource type="Texture2D" uid="uid://bt3sjlkvdpffp" path="res://assets/items/small_key.png" id="4_yolit"]
+[ext_resource type="Texture2D" uid="uid://bimwuwr08wtor" path="res://assets/shapes/metalPanel_red.png" id="4_8o4fj"]
+[ext_resource type="Shader" path="res://scenes/shape_puzzle/puzzlepanel.gdshader" id="4_mkpdc"]
 [ext_resource type="PackedScene" uid="uid://ck6iuluif14sf" path="res://scenes/item/generic_item.tscn" id="4_yoobi"]
 [ext_resource type="Resource" uid="uid://cjc4im35dqgqi" path="res://resources/items/three_shape.tres" id="5_l6xnp"]
+[ext_resource type="Resource" uid="uid://fhj645hb6m2r" path="res://resources/items/four_shape.tres" id="8_g845k"]
+[ext_resource type="PackedScene" uid="uid://c3jisfuh2lkox" path="res://scenes/more_info/more_info.tscn" id="8_yma5m"]
+[ext_resource type="Resource" uid="uid://crw3c06wsb6gr" path="res://resources/information/threeShapeInfo.tres" id="9_4le4m"]
+[ext_resource type="Resource" uid="uid://d0s2p0w1xsqu0" path="res://resources/items/five_shape.tres" id="9_gj4g3"]
+[ext_resource type="Resource" uid="uid://b64fjre5ha2x1" path="res://resources/items/six_shape.tres" id="10_w3w1u"]
+[ext_resource type="Resource" uid="uid://b5jhrakoqaexk" path="res://resources/information/fourShapeInfo.tres" id="11_56nc5"]
+[ext_resource type="Resource" uid="uid://oo62ywhypcye" path="res://resources/information/fiveShapeInfo.tres" id="13_ia3q3"]
+[ext_resource type="Resource" uid="uid://btk511bqcc0hx" path="res://resources/information/sixShapeInfo.tres" id="15_dp2a8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vfw1b"]
+shader = ExtResource("4_mkpdc")
 
 [node name="shape_puzzle" type="Node2D"]
 script = ExtResource("1_npvun")
@@ -15,25 +26,129 @@ script = ExtResource("1_npvun")
 position = Vector2(960, 540)
 scale = Vector2(0.458833, 0.2775)
 texture = ExtResource("1_mjg3t")
-metadata/_edit_lock_ = true
 
-[node name="SnapPoint" parent="." instance=ExtResource("3_5qgg5")]
-position = Vector2(642, 491)
-scale = Vector2(0.3, 0.3)
+[node name="Panel1" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_vfw1b")
+position = Vector2(512, 512)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("4_8o4fj")
 
-[node name="Sprite2D" type="Sprite2D" parent="SnapPoint"]
-texture = ExtResource("4_ua1v4")
+[node name="SnapPoint" parent="Panel1" instance=ExtResource("3_5qgg5")]
+position = Vector2(0, 13.3333)
+scale = Vector2(0.125, 0.125)
+metadata/_edit_group_ = true
 
-[node name="SnapPoint2" parent="." instance=ExtResource("3_5qgg5")]
-position = Vector2(1210, 499)
-scale = Vector2(0.3, 0.3)
+[node name="Panel2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_vfw1b")
+position = Vector2(800, 512)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("4_8o4fj")
 
-[node name="Sprite2D" type="Sprite2D" parent="SnapPoint2"]
-texture = ExtResource("4_yolit")
+[node name="SnapPoint" parent="Panel2" instance=ExtResource("3_5qgg5")]
+position = Vector2(0, 13.3333)
+scale = Vector2(0.125, 0.125)
+metadata/_edit_group_ = true
+
+[node name="Panel3" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_vfw1b")
+position = Vector2(1104, 512)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("4_8o4fj")
+
+[node name="SnapPoint" parent="Panel3" instance=ExtResource("3_5qgg5")]
+position = Vector2(0, 13.3333)
+scale = Vector2(0.125, 0.125)
+metadata/_edit_group_ = true
+
+[node name="Panel4" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_vfw1b")
+position = Vector2(1408, 512)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("4_8o4fj")
+
+[node name="SnapPoint" parent="Panel4" instance=ExtResource("3_5qgg5")]
+position = Vector2(0, 13.3333)
+scale = Vector2(0.125, 0.125)
+metadata/_edit_group_ = true
 
 [node name="ThreeShape" parent="." instance=ExtResource("4_yoobi")]
-position = Vector2(1389, 244)
-scale = Vector2(0.2, 0.2)
+position = Vector2(640, 768)
+scale = Vector2(0.5, 0.5)
 item_resource = ExtResource("5_l6xnp")
 snappable = true
 metadata/_edit_group_ = true
+
+[node name="MoreInfo" parent="ThreeShape" instance=ExtResource("8_yma5m")]
+more_info = ExtResource("9_4le4m")
+
+[node name="FourShape" parent="." instance=ExtResource("4_yoobi")]
+position = Vector2(848, 799)
+scale = Vector2(0.2, 0.2)
+item_resource = ExtResource("8_g845k")
+snappable = true
+metadata/_edit_group_ = true
+
+[node name="MoreInfo" parent="FourShape" instance=ExtResource("8_yma5m")]
+more_info = ExtResource("11_56nc5")
+
+[node name="FiveShape" parent="." instance=ExtResource("4_yoobi")]
+position = Vector2(1040, 784)
+scale = Vector2(0.2, 0.2)
+item_resource = ExtResource("9_gj4g3")
+snappable = true
+metadata/_edit_group_ = true
+
+[node name="MoreInfo" parent="FiveShape" instance=ExtResource("8_yma5m")]
+more_info = ExtResource("13_ia3q3")
+
+[node name="SixShape" parent="." instance=ExtResource("4_yoobi")]
+position = Vector2(1232, 784)
+rotation = 3.0023
+scale = Vector2(0.2, 0.2)
+item_resource = ExtResource("10_w3w1u")
+snappable = true
+metadata/_edit_group_ = true
+
+[node name="MoreInfo" parent="SixShape" instance=ExtResource("8_yma5m")]
+more_info = ExtResource("15_dp2a8")
+
+[node name="ThreeShape2" parent="." instance=ExtResource("4_yoobi")]
+position = Vector2(565, 848)
+scale = Vector2(0.5, 0.5)
+item_resource = ExtResource("5_l6xnp")
+snappable = true
+metadata/_edit_group_ = true
+
+[node name="MoreInfo" parent="ThreeShape2" instance=ExtResource("8_yma5m")]
+more_info = ExtResource("9_4le4m")
+
+[node name="FourShape2" parent="." instance=ExtResource("4_yoobi")]
+position = Vector2(773, 870)
+scale = Vector2(0.2, 0.2)
+item_resource = ExtResource("8_g845k")
+snappable = true
+metadata/_edit_group_ = true
+
+[node name="MoreInfo" parent="FourShape2" instance=ExtResource("8_yma5m")]
+more_info = ExtResource("11_56nc5")
+
+[node name="FiveShape2" parent="." instance=ExtResource("4_yoobi")]
+position = Vector2(965, 870)
+scale = Vector2(0.2, 0.2)
+item_resource = ExtResource("9_gj4g3")
+snappable = true
+metadata/_edit_group_ = true
+
+[node name="MoreInfo" parent="FiveShape2" instance=ExtResource("8_yma5m")]
+more_info = ExtResource("13_ia3q3")
+
+[node name="SixShape2" parent="." instance=ExtResource("4_yoobi")]
+position = Vector2(1168, 870)
+rotation = 3.0023
+scale = Vector2(0.2, 0.2)
+item_resource = ExtResource("10_w3w1u")
+snappable = true
+metadata/_edit_group_ = true
+
+[node name="MoreInfo" parent="SixShape2" instance=ExtResource("8_yma5m")]
+more_info = ExtResource("15_dp2a8")

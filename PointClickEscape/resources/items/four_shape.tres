@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://fhj645hb6m2r"]
 
 [ext_resource type="Script" path="res://resources/item.gd" id="1_y42se"]
-[ext_resource type="Texture2D" uid="uid://db5u4u2gjgyoh" path="res://assets/shapes/Shape-02.png" id="2_epbay"]
+[ext_resource type="Texture2D" uid="uid://bife42c5ogcvf" path="res://assets/shapes/ShapeSmaller-02.png" id="2_24jji"]
 
 [resource]
 script = ExtResource("1_y42se")
 name = "Four Shape"
-texture = ExtResource("2_epbay")
+texture = ExtResource("2_24jji")
 description = ""

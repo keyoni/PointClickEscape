@@ -61,13 +61,8 @@ func _input(event: InputEvent) -> void:
 
 func update_snapping():
 	if snappable and selected == false:
-		# Get overlapping Drag Items
-		
-
 		# Get overlapping Snap Points
 		var snap_points = get_tree().get_nodes_in_group("snap_points")
-		print(snap_points)
-
 		var closest_snap_point = null
 		var min_distance = 999.999
 		print("snapping!")
@@ -82,8 +77,8 @@ func update_snapping():
 					min_distance = distance
 					closest_snap_point = snap_point
 
-			#print(closest_snap_point.global_position)
 			if closest_snap_point:
+				closest_snap_point.snapped = true
 				self.set_global_position(closest_snap_point.get_global_position())
 
 				if inventoryItem:
@@ -94,11 +89,3 @@ func update_snapping():
 	else:
 	# No snapping, just return to the original position
 		pass
-
-			#print("snapping!")
-			#print(closest_body.global_position)
-			#print(self.global_position)
-			#self.set_global_position(closest_body.get_global_position()) 
-			#print(self.global_position)
-			#var tween = create_tween()
-			#tween.tween_property(self, "global_position",closest_body.get_global_position(),0.5).set_ease(Tween.EASE_IN_OUT)

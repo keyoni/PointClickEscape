@@ -31,7 +31,7 @@ texture = ExtResource("1_m1qn6")
 expand_mode = 2
 
 [node name="InventoryBar" parent="." instance=ExtResource("2_0ydoa")]
-position = Vector2(965, 1009)
+position = Vector2(954, 1057)
 
 [node name="Book" parent="." instance=ExtResource("3_o5sdf")]
 position = Vector2(1385, 841)
