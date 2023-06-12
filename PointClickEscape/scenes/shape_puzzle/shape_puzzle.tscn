@@ -33,7 +33,7 @@ position = Vector2(512, 512)
 scale = Vector2(2.4, 2.4)
 texture = ExtResource("4_8o4fj")
 
-[node name="SnapPoint" parent="Panel1" instance=ExtResource("3_5qgg5")]
+[node name="Panel1Snap" parent="Panel1" instance=ExtResource("3_5qgg5")]
 position = Vector2(0, 13.3333)
 scale = Vector2(0.125, 0.125)
 metadata/_edit_group_ = true
@@ -44,7 +44,7 @@ position = Vector2(800, 512)
 scale = Vector2(2.4, 2.4)
 texture = ExtResource("4_8o4fj")
 
-[node name="SnapPoint" parent="Panel2" instance=ExtResource("3_5qgg5")]
+[node name="Panel2Snap" parent="Panel2" instance=ExtResource("3_5qgg5")]
 position = Vector2(0, 13.3333)
 scale = Vector2(0.125, 0.125)
 metadata/_edit_group_ = true
@@ -55,7 +55,7 @@ position = Vector2(1104, 512)
 scale = Vector2(2.4, 2.4)
 texture = ExtResource("4_8o4fj")
 
-[node name="SnapPoint" parent="Panel3" instance=ExtResource("3_5qgg5")]
+[node name="Panel3Snap" parent="Panel3" instance=ExtResource("3_5qgg5")]
 position = Vector2(0, 13.3333)
 scale = Vector2(0.125, 0.125)
 metadata/_edit_group_ = true
@@ -66,7 +66,7 @@ position = Vector2(1408, 512)
 scale = Vector2(2.4, 2.4)
 texture = ExtResource("4_8o4fj")
 
-[node name="SnapPoint" parent="Panel4" instance=ExtResource("3_5qgg5")]
+[node name="Panel4Snap" parent="Panel4" instance=ExtResource("3_5qgg5")]
 position = Vector2(0, 13.3333)
 scale = Vector2(0.125, 0.125)
 metadata/_edit_group_ = true
@@ -75,16 +75,15 @@ metadata/_edit_group_ = true
 position = Vector2(640, 768)
 scale = Vector2(0.5, 0.5)
 item_resource = ExtResource("5_l6xnp")
+more_info_resource = ExtResource("9_4le4m")
 snappable = true
 metadata/_edit_group_ = true
-
-[node name="MoreInfo" parent="ThreeShape" instance=ExtResource("8_yma5m")]
-more_info = ExtResource("9_4le4m")
 
 [node name="FourShape" parent="." instance=ExtResource("4_yoobi")]
 position = Vector2(848, 799)
 scale = Vector2(0.2, 0.2)
 item_resource = ExtResource("8_g845k")
+more_info_resource = ExtResource("11_56nc5")
 snappable = true
 metadata/_edit_group_ = true
 
@@ -95,6 +94,7 @@ more_info = ExtResource("11_56nc5")
 position = Vector2(1040, 784)
 scale = Vector2(0.2, 0.2)
 item_resource = ExtResource("9_gj4g3")
+more_info_resource = ExtResource("13_ia3q3")
 snappable = true
 metadata/_edit_group_ = true
 
@@ -106,6 +106,7 @@ position = Vector2(1232, 784)
 rotation = 3.0023
 scale = Vector2(0.2, 0.2)
 item_resource = ExtResource("10_w3w1u")
+more_info_resource = ExtResource("15_dp2a8")
 snappable = true
 metadata/_edit_group_ = true
 
@@ -116,6 +117,7 @@ more_info = ExtResource("15_dp2a8")
 position = Vector2(565, 848)
 scale = Vector2(0.5, 0.5)
 item_resource = ExtResource("5_l6xnp")
+more_info_resource = ExtResource("9_4le4m")
 snappable = true
 metadata/_edit_group_ = true
 
@@ -126,6 +128,7 @@ more_info = ExtResource("9_4le4m")
 position = Vector2(773, 870)
 scale = Vector2(0.2, 0.2)
 item_resource = ExtResource("8_g845k")
+more_info_resource = ExtResource("11_56nc5")
 snappable = true
 metadata/_edit_group_ = true
 
@@ -136,6 +139,7 @@ more_info = ExtResource("11_56nc5")
 position = Vector2(965, 870)
 scale = Vector2(0.2, 0.2)
 item_resource = ExtResource("9_gj4g3")
+more_info_resource = ExtResource("13_ia3q3")
 snappable = true
 metadata/_edit_group_ = true
 
@@ -147,8 +151,15 @@ position = Vector2(1168, 870)
 rotation = 3.0023
 scale = Vector2(0.2, 0.2)
 item_resource = ExtResource("10_w3w1u")
+more_info_resource = ExtResource("15_dp2a8")
 snappable = true
 metadata/_edit_group_ = true
 
 [node name="MoreInfo" parent="SixShape2" instance=ExtResource("8_yma5m")]
 more_info = ExtResource("15_dp2a8")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1312.0
+offset_top = 656.0
+offset_right = 1504.0
+offset_bottom = 720.0

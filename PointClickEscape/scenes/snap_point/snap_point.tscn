@@ -12,5 +12,3 @@ script = ExtResource("1_fr4me")
 [node name="SnapShape" type="CollisionShape2D" parent="SnapDetectorArea"]
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_0bflj")
-
-[connection signal="area_entered" from="SnapDetectorArea" to="." method="_on_snap_detector_area_area_entered"]

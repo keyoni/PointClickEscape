@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_620uv")
-number_of_sides = 4
+number_of_sides = 5

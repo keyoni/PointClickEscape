@@ -1,16 +1,21 @@
 extends Node2D
 
-@export var snapped = false
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@export var max_items = 1
 
+var items = []
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func can_snap(item):
+	return items.size() < max_items
 
+func snap_item(item):
+	if can_snap(item):
+		items.append(item)
+		item.set_global_position(self.get_global_position())
+		item.connect("item_unsnapped", unsnap_item,4)
+		#print(items)
+	else:
+		item.revert_to_previous_position()
 
-
-func _on_snap_detector_area_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
+func unsnap_item(item):
+	#print(items)
+	items.erase(item)
